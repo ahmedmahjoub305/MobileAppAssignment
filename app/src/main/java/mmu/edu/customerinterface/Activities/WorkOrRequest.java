@@ -1,4 +1,4 @@
-package mmu.edu.customerinterface;
+package mmu.edu.customerinterface.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class workorrequestActivity extends AppCompatActivity {
+import mmu.edu.customerinterface.R;
+
+public class WorkOrRequest extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_workorrequest);
+        setContentView(R.layout.activity_work_or_request);
 
         configureRequestButton();
     }
@@ -22,7 +24,7 @@ public class workorrequestActivity extends AppCompatActivity {
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(workorrequestActivity.this,logInActivity.class));
+                startActivity(new Intent(WorkOrRequest.this, SignIn.class));
             }
         });
     }

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "81188426927",
-    "project_id": "auth-a4d00",
-    "storage_bucket": "auth-a4d00.appspot.com"
+    "project_number": "993858653120",
+    "project_id": "customerinterface-f6a30",
+    "storage_bucket": "customerinterface-f6a30.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:81188426927:android:f6d29bb07122235f9eb05a",
+        "mobilesdk_app_id": "1:993858653120:android:36b595fd3f2bd037495625",
         "android_client_info": {
           "package_name": "mmu.edu.customerinterface"
         }
       },
       "oauth_client": [
         {
-          "client_id": "81188426927-srdu7fte4fpa4nva09ee6b4gtlbpampi.apps.googleusercontent.com",
+          "client_id": "993858653120-up5ld48esj33a5h0hahk1g72fdlvabct.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDHQarwa9qyJ2u4VjoOpZe-h0YX3wHY_7U"
+          "current_key": "AIzaSyAOKaw1lhGrHGUid4JxZ4dbdIEAV9_hLOA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "81188426927-srdu7fte4fpa4nva09ee6b4gtlbpampi.apps.googleusercontent.com",
+              "client_id": "993858653120-up5ld48esj33a5h0hahk1g72fdlvabct.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,4 +1,4 @@
-package mmu.edu.customerinterface;
+package mmu.edu.customerinterface.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class howtoActivity3 extends AppCompatActivity {
+import mmu.edu.customerinterface.R;
+
+public class HowToActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_howto3);
+        setContentView(R.layout.activity_how_to2);
 
         configureNextToPage3Button();
         configureBackToPage2Button();
@@ -23,7 +25,7 @@ public class howtoActivity3 extends AppCompatActivity {
         NextToPage3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(howtoActivity3.this, howtoActivity4.class));
+                startActivity(new Intent(HowToActivity2.this, HowToActivity3.class));
             }
         });
     }
@@ -33,7 +35,7 @@ public class howtoActivity3 extends AppCompatActivity {
         BackToPage2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(howtoActivity3.this, howtoActivity1.class));
+                startActivity(new Intent(HowToActivity2.this, HowToActivity1.class));
             }
         });
     }

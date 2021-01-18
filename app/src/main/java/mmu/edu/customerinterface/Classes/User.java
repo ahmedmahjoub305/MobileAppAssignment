@@ -1,4 +1,4 @@
-package mmu.edu.customerinterface;
+package mmu.edu.customerinterface.Classes;
 
 public class User {
     private String  lastName, age,  email ;

@@ -12,17 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CustomerInterface">
-        <activity android:name=".logInActivity"></activity>
-<!--        <activity-->
-<!--            android:name=".ui.login.LoginActivity"-->
-<!--            android:label="@string/title_activity_login"-->
-<!--            tools:ignore="MissingClass" />-->
-        <activity android:name=".userssignupActivity" />
-        <activity android:name=".workorrequestActivity" />
-        <activity android:name=".howtoActivity4" />
-        <activity android:name=".howtoActivity3" />
-        <activity android:name=".howtoActivity1" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.SignIn"/>
+        <activity android:name=".Activities.Register" />
+        <activity android:name=".Activities.WorkOrRequest" />
+        <activity android:name=".Activities.HowToActivity3" />
+        <activity android:name=".Activities.HowToActivity2" />
+        <activity android:name=".Activities.HowToActivity1" />
+        <activity android:name=".Activities.WelcomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
