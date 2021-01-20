@@ -1,40 +1,42 @@
 package mmu.edu.customerinterface.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Button;
+import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 import mmu.edu.customerinterface.R;
 
 import static android.widget.Toast.LENGTH_SHORT;
+import static mmu.edu.customerinterface.Activities.ClientRegister.SHARED_PREFS;
 
-public class WelcomePage extends AppCompatActivity {
+public class ContractorDashBoard extends AppCompatActivity {
     boolean doubleBackToExitPressedOnce = false;
+
+    public void LogOut(View view){
+        saveData("", "Id");
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(), WorkOrRequest.class));
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), ClientDashBoard.class));
-            finish();
-        }
-        configureGetStartedButton();
+        setContentView(R.layout.activity_dash_board_contractor);
     }
 
-    private void configureGetStartedButton() {
-        Button getStartedButton = findViewById(R.id.GetStartedbutton);
-        getStartedButton.setOnClickListener(view -> {
-                    startActivity(new Intent(WelcomePage.this, HowToActivity1.class));
-                    finish();
-                }
-        );
+    public void saveData(String data, String name) {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(name, data);
+        editor.apply();
     }
 
     @Override

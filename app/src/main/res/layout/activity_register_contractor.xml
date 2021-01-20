@@ -121,6 +121,26 @@
             android:importantForAutofill="no"
             android:inputType="textPassword" />
 
+        <EditText
+            android:id="@+id/Speciality"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:ems="10"
+            android:hint="Speciality"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/Experience"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:ems="10"
+            android:hint="Experience"
+            android:importantForAutofill="no"
+            android:inputType="textPassword" />
+
         <Button
             android:id="@+id/userSignUpButton"
             android:layout_width="match_parent"

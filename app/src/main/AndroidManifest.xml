@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="mmu.edu.customerinterface">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CustomerInterface">
-        <activity android:name=".Activities.SignIn"/>
-        <activity android:name=".Activities.Register" />
+        <activity android:name=".Activities.ClientDashBoard"/>
+        <activity android:name=".Activities.ClientSignIn" />
+        <activity android:name=".Activities.ClientRegister" />
+        <activity android:name=".Activities.ContractorDashBoard" />
+        <activity android:name=".Activities.ContractorSignIn" />
+        <activity android:name=".Activities.ContractorRegister" />
         <activity android:name=".Activities.WorkOrRequest" />
         <activity android:name=".Activities.HowToActivity3" />
         <activity android:name=".Activities.HowToActivity2" />

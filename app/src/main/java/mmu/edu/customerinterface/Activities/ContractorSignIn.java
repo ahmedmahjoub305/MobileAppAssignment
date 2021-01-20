@@ -1,7 +1,5 @@
 package mmu.edu.customerinterface.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,9 +21,9 @@ import java.util.Objects;
 
 import mmu.edu.customerinterface.R;
 
-import static mmu.edu.customerinterface.Activities.Register.SHARED_PREFS;
+import static mmu.edu.customerinterface.Activities.ClientRegister.SHARED_PREFS;
 
-public class SignIn extends AppCompatActivity {
+public class ContractorSignIn extends AppCompatActivity {
 
     Context context = this;
     EditText editTextTextPersonName, editTextTextPassword;
@@ -66,7 +67,7 @@ public class SignIn extends AppCompatActivity {
     }
 
     public void Register(View view) {
-        startActivity(new Intent(SignIn.this, Register.class));
+        startActivity(new Intent(ContractorSignIn.this, ContractorRegister.class));
     }
 
     @Override
@@ -75,7 +76,6 @@ public class SignIn extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
-
         editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
         editTextTextPassword = findViewById(R.id.editTextTextPassword);
         progressBar = findViewById(R.id.progressBar);
@@ -97,8 +97,8 @@ public class SignIn extends AppCompatActivity {
                 String Id = documentSnapshot.getString("Id");
                 saveData(Id, "Id");
                 Toast.makeText(context, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(getApplicationContext(), UserDashboard.class));
-//                finish();
+                startActivity(new Intent(getApplicationContext(), ContractorDashBoard.class));
+                finish();
             }
         });
     }

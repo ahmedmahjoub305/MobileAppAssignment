@@ -3,6 +3,7 @@ package mmu.edu.customerinterface.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,7 @@ import java.util.Objects;
 import mmu.edu.customerinterface.R;
 
 
-public class Register extends AppCompatActivity {
+public class ClientRegister extends AppCompatActivity {
 
     Context context = this;
     long maxId = 1;
@@ -38,7 +39,7 @@ public class Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference ref;
     private FirebaseFirestore fStore;
-    private DocumentReference noteRef;
+//    private DocumentReference noteRef;
     boolean successful = false;
     public static final String TAG = "TAG";
     public static final String SHARED_PREFS = "sharedPrefs";
@@ -64,6 +65,8 @@ public class Register extends AppCompatActivity {
 
             }
         });
+
+
         //mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         //banner = (TextView) findViewById(R.id.banner);
@@ -143,6 +146,7 @@ public class Register extends AppCompatActivity {
                 ref.child(String.valueOf(maxId + 1)).child("age").setValue(age);
                 ref.child(String.valueOf(maxId + 1)).child("gender").setValue(gender);
                 ref.child(String.valueOf(maxId + 1)).child("email").setValue(email);
+                ref.child(String.valueOf(maxId + 1)).child("SignInAs").setValue("Client");
 
                 user.put("Id", Long.toString(maxId + 1));
                 saveData(Long.toString(maxId + 1), "Id");
@@ -157,8 +161,8 @@ public class Register extends AppCompatActivity {
                 });
                 if (successful) {
                     Toast.makeText(context,"User created successfully",Toast.LENGTH_LONG).show();
-//                    startActivity(new Intent(getApplicationContext(), UserDashboard.class));
-//                    finish();
+                    startActivity(new Intent(getApplicationContext(), ClientDashBoard.class));
+                    finish();
                 }
             } else {
                 Toast.makeText(context, "Error ! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();

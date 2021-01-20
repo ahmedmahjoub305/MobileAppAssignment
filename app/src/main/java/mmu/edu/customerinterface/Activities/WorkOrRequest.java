@@ -11,21 +11,26 @@ import mmu.edu.customerinterface.R;
 
 public class WorkOrRequest extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work_or_request);
 
-        configureRequestButton();
+        configureButtons();
     }
 
-    public void configureRequestButton() {
-        Button requestButton = (Button) findViewById(R.id.RequestButton);
-        requestButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(WorkOrRequest.this, SignIn.class));
-            }
-        });
+    public void configureButtons() {
+        Button requestButton = findViewById(R.id.RequestButton);
+        requestButton.setOnClickListener(v -> startActivity(new Intent(WorkOrRequest.this, ClientSignIn.class)));
+
+        Button workButton = findViewById(R.id.WorkButton);
+        workButton.setOnClickListener(v -> startActivity(new Intent(WorkOrRequest.this, ContractorSignIn.class)));
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(WorkOrRequest.this, HowToActivity3.class));
+        finish();
     }
 }
